@@ -1,0 +1,42 @@
+<div *ngIf="isContactsLoading">
+    <img src="/assets/loading.gif" title="Loading..." class="loading" /> 
+</div>
+<div class="row">
+    <div class="nopadding first">
+      <div *ngIf="!errorMsg">	
+        <h4 class="text-center header">Contacts</h4>
+        <h5>Favorite Contacts</h5>
+        <ul class="media-list">
+              <li (click)="selectContact(contact)" class="media pointer" *ngFor="let contact of contacts | isFavorite: true">
+                    <div class="media-left">
+                      <a>
+                        <img class="media-object" src="{{contact.smallImageURL}}" alt="">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading"><span class="glyphicon glyphicon-star"></span>{{contact.name}}</h4>
+                      <p>{{contact.companyName}}<p>
+                    </div>
+              </li>
+        </ul>
+        <h5>Other Contacts</h5>
+        <ul class="media-list">
+            <li (click)="selectContact(contact)" class="media pointer" *ngFor="let contact of contacts | isFavorite: false">
+                  <div class="media-left">
+                    <a>
+                      <img class="media-object" src="{{contact.smallImageURL}}" alt="{{contact.name}}"
+                          onError="this.src='/assets/not-available.png';">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">{{contact.name}}</h4>
+                    <p>{{contact.companyName}}<p>
+                  </div>
+            </li>
+        </ul>
+      </div>
+      <div *ngIf="errorMsg">
+        <span class="alert alert-danger">{{errorMsg}}</span>
+      </div>
+    </div>
+</div>
