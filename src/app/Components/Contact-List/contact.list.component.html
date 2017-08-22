@@ -1,7 +1,7 @@
 <div *ngIf="isContactsLoading">
     <img src="/assets/loading.gif" title="Loading..." class="loading" /> 
 </div>
-<div class="row">
+<div>
     <div [ngClass]="{'col-md-10': selectedContact && menuState == 'in'}">
       <div *ngIf="!errorMsg">	
         <h4 class="text-center header">Contacts</h4>
@@ -10,7 +10,7 @@
               <li (click)="selectContact(contact)" class="media pointer" *ngFor="let contact of contacts | isFavorite: true">
                     <div class="media-left">
                       <a>
-                        <img class="media-object" src="{{contact.smallImageURL}}" alt="">
+                        <img class="media-object" src="{{contact.smallImageURL}}" alt="" onError="this.src='/assets/not-available.png';">
                       </a>
                     </div>
                     <div class="media-body">

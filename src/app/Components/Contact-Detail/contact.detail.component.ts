@@ -3,7 +3,8 @@ import { IContact } from '../../Models';
 
 @Component({
     selector: 'contact-detail',
-    templateUrl: './contact.detail.component.html'
+    templateUrl: './contact.detail.component.html',
+    styleUrls: [ './contact.detail.component.css' ]
 })
 
 export class ContactDetailComponent {

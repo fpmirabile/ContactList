@@ -6,6 +6,7 @@ import { ContactService } from '../../Services';
 @Component({
     selector: 'contact-list',
     templateUrl: './contact.list.component.html',
+    styleUrls: [ './contact.list.component.css' ],
     providers: [ ContactService ],
     animations: [
         trigger('slideInOut', [

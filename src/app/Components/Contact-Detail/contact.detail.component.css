@@ -1,0 +1,52 @@
+.thumbnail {
+    border:0px;
+    margin:0px auto;
+}
+
+.thumbnail img {
+    width:100px;
+    height:100px;
+}
+
+span {
+    font-weight:bold;
+    color:#ccc;
+}
+span.black {
+    color:#000;
+}
+span.glyphicon-star {
+    color:gold;
+}
+
+span.glyphicon-chevron-left {
+    color:lightBlue;
+}
+
+li {
+    border-bottom:1px solid #ccc;
+    height:80px;
+}
+li.media {
+    height:auto;
+}
+
+h6 {
+    color:#ccc;
+    font-weight:bold;
+}
+
+li h6 {
+    padding-top: 5px !important;
+}
+
+ul {
+    padding:0px 15px!important;
+}
+
+h4.header {
+    background:#eaeaea;
+    margin-top:0px;
+    height:40px;
+    padding:10px;
+}
