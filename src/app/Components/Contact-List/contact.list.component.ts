@@ -57,4 +57,12 @@ export class ContactListComponent implements OnInit {
     closeAnimation(animation: string) : void {
         this.menuState = animation;
     };
+
+    editContact(contact : IContact) : void { 
+        const contactEdited  = this.contacts.find(item => item.id == contact.id);
+
+        if (contactEdited) {
+            contactEdited.isFavorite = contact.isFavorite;
+        }
+    };
 };

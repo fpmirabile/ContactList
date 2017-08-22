@@ -11,6 +11,10 @@ body {
     height: 100%;
 }
 
+.glyphicon-star-empty {
+    color: white;
+ }
+
 html {
     width: 100%;
     height: 100%;

@@ -13,6 +13,7 @@ export class ContactDetailComponent {
 
     @Input() contact : IContact;
     @Output() event = new EventEmitter<string>();
+    @Output() contactEdited = new EventEmitter<IContact>();
 
     quit() : void {
         this.event.emit("out");
@@ -25,5 +26,10 @@ export class ContactDetailComponent {
         }
 
         return "";
+    };
+
+    editFavorite() : void {
+        this.contact.isFavorite = !this.contact.isFavorite;
+        this.contactEdited.emit(this.contact);
     };
 };

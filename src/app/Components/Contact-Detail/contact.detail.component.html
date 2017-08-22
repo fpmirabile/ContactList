@@ -4,7 +4,7 @@
                   <span class="glyphicon glyphicon-chevron-left"></span>
                   Contacts
             </a>
-            <span *ngIf="contact.isFavorite" class="glyphicon glyphicon-star pull-right"></span>
+            <span [ngClass]="{ 'glyphicon-star': contact.isFavorite, 'glyphicon-star-empty': !contact.isFavorite }" (click)="editFavorite()" class="glyphicon pull-right"></span>
       </h4>
       <ul class="media-list">
             <li class="media">

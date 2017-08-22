@@ -39,5 +39,6 @@
         <span class="alert alert-danger">{{errorMsg}}</span>
       </div>
     </div>
-    <contact-detail [@slideInOut]="menuState" class="col-md-2 sidebar" (event)="closeAnimation($event)" [contact]="selectedContact"></contact-detail>
+    <contact-detail [@slideInOut]="menuState" class="col-md-2 sidebar" (event)="closeAnimation($event)" [contact]="selectedContact"
+      (editFavorite)="editContact($event)"></contact-detail>
 </div>
