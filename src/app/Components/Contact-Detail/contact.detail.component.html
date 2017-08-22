@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="contact">
       <h4 class="header">
             <a href="#" (click)="quit()">
                   <span class="glyphicon glyphicon-chevron-left"></span>
@@ -21,30 +21,36 @@
                   <h6>PHONE</h6>
                   <span class="pull-left black">{{contact.phone.work}}</span>
                   <span class="pull-right">Work</span>
+                  <br />
             </li> 
             <li *ngIf="contact.phone && contact.phone.home">
                   <h6>PHONE</h6>
                   <span class="pull-left black">{{contact.phone.home}}</span>
                   <span class="pull-right">Home</span>
+                  <br />
             </li>
             <li *ngIf="contact.phone && contact.phone.mobile">
                   <h6>PHONE</h6>
                   <span class="pull-left black">{{contact.phone.mobile}}</span>
                   <span class="pull-right">Mobile</span>
+                  <br />
             </li>
             <li *ngIf="contact.address">
                   <h6>Address</h6>
                   <span class="pull-left black">{{contact.address.street}}</span>
                   <br />
                   <span class="pull-left black">{{formatAddress()}}</span>
+                  <br />
             </li>
             <li *ngIf="contact.birthdate">
                   <h6>Birthdate</h6>
                   <span class="pull-left black">{{contact.birthdate}}</span>
+                  <br />
             </li>
             <li *ngIf="contact.emailAddress">
                   <h6>Email</h6>
                   <span class="pull-left black">{{contact.emailAddress}}</span>
+                  <br />
             </li>
       </ul>
 </div>

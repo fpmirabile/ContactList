@@ -50,7 +50,11 @@ export class ContactListComponent implements OnInit {
     };
 
     selectContact(contact : IContact) : void {
-        this.menuState = this.menuState == "out" ? "in" : "out";
+        this.menuState = "in";
         this.selectedContact = contact;
+    };
+
+    closeAnimation(animation: string) : void {
+        this.menuState = animation;
     };
 };

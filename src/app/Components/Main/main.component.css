@@ -82,6 +82,11 @@ h6 {
     color:#ccc;
     font-weight:bold;
 }
+
+li h6 {
+    padding-top: 5px !important;
+}
+
 .second span {
     font-weight:bold;
     color:#ccc;
@@ -98,6 +103,7 @@ span.glyphicon-star {
 }
 
 .sidebar {
+    padding: 0;
     position: fixed;
     left: auto;
     top: 0;

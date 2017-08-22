@@ -1,4 +1,4 @@
-import { OnInit, Component, Input } from '@angular/core';
+import { OnInit, Component, Input, Output, EventEmitter } from '@angular/core';
 import { IContact } from '../../Models';
 
 @Component({
@@ -12,9 +12,10 @@ export class ContactDetailComponent {
     };
 
     @Input() contact : IContact;
+    @Output() event = new EventEmitter<string>();
 
     quit() : void {
-        
+        this.event.emit("out");
     };
 
     formatAddress() : string {

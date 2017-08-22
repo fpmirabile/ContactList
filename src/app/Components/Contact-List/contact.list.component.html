@@ -1,9 +1,8 @@
 <div *ngIf="isContactsLoading">
     <img src="/assets/loading.gif" title="Loading..." class="loading" /> 
 </div>
-<div>
-    <!-- <div class="nopadding first"> -->
-    <div class="">
+<div class="row">
+    <div [ngClass]="{'col-md-10': selectedContact && menuState == 'in'}">
       <div *ngIf="!errorMsg">	
         <h4 class="text-center header">Contacts</h4>
         <h5>Favorite Contacts</h5>
@@ -40,5 +39,5 @@
         <span class="alert alert-danger">{{errorMsg}}</span>
       </div>
     </div>
+    <contact-detail [@slideInOut]="menuState" class="col-md-2 sidebar" (event)="closeAnimation($event)" [contact]="selectedContact"></contact-detail>
 </div>
-<contact-detail [@slideInOut]="menuState" class="sidebar" *ngIf="selectedContact" [contact]="selectedContact"></contact-detail>
