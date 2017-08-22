@@ -9,9 +9,5 @@ import { IContact } from '../../Models';
 })
 
 export class MainComponent {
-    selectedContact: IContact;
-    
-      selectContact(contact: IContact) {
-        this.selectedContact = contact;
-      };
+  
 };

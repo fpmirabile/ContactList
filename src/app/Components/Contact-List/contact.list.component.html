@@ -1,8 +1,9 @@
 <div *ngIf="isContactsLoading">
     <img src="/assets/loading.gif" title="Loading..." class="loading" /> 
 </div>
-<div class="row">
-    <div class="nopadding first">
+<div>
+    <!-- <div class="nopadding first"> -->
+    <div class="">
       <div *ngIf="!errorMsg">	
         <h4 class="text-center header">Contacts</h4>
         <h5>Favorite Contacts</h5>
@@ -40,3 +41,4 @@
       </div>
     </div>
 </div>
+<contact-detail [@slideInOut]="menuState" class="sidebar" *ngIf="selectedContact" [contact]="selectedContact"></contact-detail>

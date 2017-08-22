@@ -1,11 +1,24 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
 import { IContact } from '../../Models';
 import { ContactService } from '../../Services';
 
 @Component({
     selector: 'contact-list',
     templateUrl: './contact.list.component.html',
-    providers: [ ContactService ]
+    providers: [ ContactService ],
+    animations: [
+        trigger('slideInOut', [
+          state('in', style({
+            transform: 'translate3d(0, 0, 0)'
+          })),
+          state('out', style({
+            transform: 'translate3d(100%, 0, 0)'
+          })),
+          transition('in => out', animate('400ms ease-in-out')),
+          transition('out => in', animate('400ms ease-in-out'))
+        ]),
+      ]
 })
 
 export class ContactListComponent implements OnInit {
@@ -16,7 +29,8 @@ export class ContactListComponent implements OnInit {
     isContactsLoading: boolean = false;
     contacts: IContact[];
     errorMessage: string = "";
-    @Output() selectedContact = new EventEmitter<IContact>();
+    selectedContact: IContact;
+    menuState: string = 'out';
 
     ngOnInit(): void {
         this.loadContacts();
@@ -36,6 +50,7 @@ export class ContactListComponent implements OnInit {
     };
 
     selectContact(contact : IContact) : void {
-        this.selectedContact.emit(contact);
+        this.menuState = this.menuState == "out" ? "in" : "out";
+        this.selectedContact = contact;
     };
 };

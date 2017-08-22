@@ -1,52 +1,50 @@
-<div class="row">
-      <div class="nopadding second">	
-            <h4 class="header">
-                  <a href="#" (click)="quit()">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        Contacts
-                  </a>
-                  <span *ngIf="contact.isFavorite" class="glyphicon glyphicon-star pull-right"></span>
-            </h4>
-            <ul class="media-list">
-                  <li class="media">
-                        <div class="thumbnail">
-                              <img class="media-object" src="{{contact.largeImageURL}}" alt="{{contact.name}}"
-                                    onError="this.src='/assets/not-available.png';">
-                              <div class="caption">
-                                    <h3>{{contact.name}}</h3>
-                                    <p class="text-center">{{contact.companyName}}</p>												
-                              </div>
-                        </div>						
-                  </li>
-                  <li *ngIf="contact.phone && contact.phone.work">
-                        <h6>PHONE</h6>
-                        <span class="pull-left black">{{contact.phone.work}}</span>
-                        <span class="pull-right">Work</span>
-                  </li> 
-                  <li *ngIf="contact.phone && contact.phone.home">
-                        <h6>PHONE</h6>
-                        <span class="pull-left black">{{contact.phone.home}}</span>
-                        <span class="pull-right">Home</span>
-                  </li>
-                  <li *ngIf="contact.phone && contact.phone.mobile">
-                        <h6>PHONE</h6>
-                        <span class="pull-left black">{{contact.phone.mobile}}</span>
-                        <span class="pull-right">Mobile</span>
-                  </li>
-                  <li *ngIf="contact.address">
-                        <h6>Address</h6>
-                        <span class="pull-left black">{{contact.address.street}}</span>
-                        <br />
-                        <span class="pull-left black">{{formatAddress()}}</span>
-                  </li>
-                  <li *ngIf="contact.birthdate">
-                        <h6>Birthdate</h6>
-                        <span class="pull-left black">{{contact.birthdate}}</span>
-                  </li>
-                  <li *ngIf="contact.emailAddress">
-                        <h6>Email</h6>
-                        <span class="pull-left black">{{contact.emailAddress}}</span>
-                  </li>
-            </ul>
-      </div>
+<div>
+      <h4 class="header">
+            <a href="#" (click)="quit()">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  Contacts
+            </a>
+            <span *ngIf="contact.isFavorite" class="glyphicon glyphicon-star pull-right"></span>
+      </h4>
+      <ul class="media-list">
+            <li class="media">
+                  <div class="thumbnail">
+                        <img class="media-object" src="{{contact.largeImageURL}}" alt="{{contact.name}}"
+                              onError="this.src='/assets/not-available.png';">
+                        <div class="caption">
+                              <h3>{{contact.name}}</h3>
+                              <p class="text-center">{{contact.companyName}}</p>												
+                        </div>
+                  </div>						
+            </li>
+            <li *ngIf="contact.phone && contact.phone.work">
+                  <h6>PHONE</h6>
+                  <span class="pull-left black">{{contact.phone.work}}</span>
+                  <span class="pull-right">Work</span>
+            </li> 
+            <li *ngIf="contact.phone && contact.phone.home">
+                  <h6>PHONE</h6>
+                  <span class="pull-left black">{{contact.phone.home}}</span>
+                  <span class="pull-right">Home</span>
+            </li>
+            <li *ngIf="contact.phone && contact.phone.mobile">
+                  <h6>PHONE</h6>
+                  <span class="pull-left black">{{contact.phone.mobile}}</span>
+                  <span class="pull-right">Mobile</span>
+            </li>
+            <li *ngIf="contact.address">
+                  <h6>Address</h6>
+                  <span class="pull-left black">{{contact.address.street}}</span>
+                  <br />
+                  <span class="pull-left black">{{formatAddress()}}</span>
+            </li>
+            <li *ngIf="contact.birthdate">
+                  <h6>Birthdate</h6>
+                  <span class="pull-left black">{{contact.birthdate}}</span>
+            </li>
+            <li *ngIf="contact.emailAddress">
+                  <h6>Email</h6>
+                  <span class="pull-left black">{{contact.emailAddress}}</span>
+            </li>
+      </ul>
 </div>
